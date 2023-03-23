@@ -1,0 +1,68 @@
+/* 태그 디자인 */
+/* 부드러운 스크롤 */
+html {
+    scroll-behavior: smooth;
+}
+
+a { color: black; text-decoration: none;}
+
+/* 헤더와 네비게이션바 */
+.head {
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid black;
+    transition: all 1s;
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.nav-menu li {
+    margin: 35px 20px;
+    font-size: 1.2rem;
+    transition: all 1s;
+
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* 스크롤 이벤트가 발생했을 때 바뀌는 네비게이션 디자인 */
+.nav.scrollon {
+    color: white;
+    background-color: black;
+    transition: all 1s;
+}
+
+.nav.nav.scrollon li>a {
+    color: white;
+    transition: all 1s;
+}
+
+
+/*  메인의 섹션 */
+section {
+    height: 400px;
+    border: 1px solid black;
+}
+
+.banner {
+    height: 100vh;
+}
+
+/* 푸터 */
+.footer {
+    height: 200px;
+    background-color: black;
+}
