@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="../그린회사홈페이지/css/style.css">
     <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="./css/slider2.css">
 </head>
 <body>
     <header class="head">
@@ -32,29 +33,117 @@
                 <div class="slider-button prev" id="prev-button">&lt;</div>
                 <div class="slider-button next" id="next-button">&gt;</div>
             </div>
+            <div class="scroll-icon"><a href="#intro">🔻</a></div>
         </section>
         <!-- 섹션 1 배너 끝 -->
 
         <!-- 섹션 2 소개(스크롤 이벤트) 시작 -->
         <a name="intro"></a>
-        <section class="intro-scroll"></section>
+        <section class="intro-scroll" id="intro">
+            <div class="green-intro">
+                <h1>그린회사</h1>
+                <p>그린회사는 새로운 50년을 이끌어 갈 수 있도록 최선을 다하겠습니다.</p>
+            </div>
+            <div class="green-intro-image">
+                <div class="image"></div>
+            </div>
+        </section>
         <!-- 섹션 2 소개(스크롤 이벤트) 끝 -->
 
         <!-- 섹션 3 사진(슬라이더 버튼) 시작 -->
         <a name="pictures"></a>
-        <section class="pictures"></section>
+        <section class="pictures">
+            <div class="picture-wrap">
+                <div class="picture-explain">
+                    <h1>사진설명</h1>
+                    <p>자세한 설명</p>
+                </div>
+                <div class="picture-buttons" id="slider2-buttons">
+                    <a class="on" href="">사진1</a>
+                    <a href="">사진2</a>
+                    <a href="">사진3</a>
+                </div>
+            </div>
+            <!-- 다른형태의 슬라이더 작성 -->
+            <div id="slider2" class="slider2">
+                <div class="slider2-item"></div>
+                <div class="slider2-item"></div>
+                <div class="slider2-item"></div>
+                <!--
+                <div class="slider2-dots">
+                    <div class="dot on"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                !-->
+            </div>
+
+        </section>
         <!-- 섹션 3 사진 끝 -->
 
         <!-- 섹션 4 뉴스(스크롤 이벤트) 시작 -->
         <a name="news"></a>
-        <section class="news-scroll"></section>
+        <section class="news-scroll" id="news">
+            <h1>회사 동향</h1>
+            <div class="news-cards">
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="card-img"></div>
+                    </div>
+                    <div class="card-text">
+                        <p>보도자료</p>
+                        <h3>보도자료 제목</h3>
+                        <span>날짜</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="card-img"></div>
+                    </div>
+                    <div class="card-text">
+                        <p>보도자료</p>
+                        <h3>보도자료 제목</h3>
+                        <span>날짜</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="card-img"></div>
+                    </div>
+                    <div class="card-text">
+                        <p>보도자료</p>
+                        <h3>보도자료 제목</h3>
+                        <span>날짜</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <div class="card-img"></div>
+                    </div>
+                    <div class="card-text">
+                        <p>보도자료</p>
+                        <h3>보도자료 제목</h3>
+                        <span>날짜</span>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- 섹션 4 뉴스(스크롤 이벤트) 끝 -->
     </main>
     <!-- 푸터 시작 -->
-    <footer class="footer"></footer>
+    <footer class="footer">
+        <div class="footer-logo">로고</div>
+        <div class="info">
+            <p>주소</p>
+            <p>대표전화</p>
+            <p>SNS</p>
+            <p>@2022 Green Copyright</p>
+            <a class="top" id="top" href="#">맨위로</a>
+        </div>
+    </footer>
     <!-- 푸터 끝 -->
-
     <script src="../그린회사홈페이지/js/scroll.js"></script>
     <script src="./js/slider.js"></script>
+    <script src="./js/slider2.js"></script>
 </body>
 </html>

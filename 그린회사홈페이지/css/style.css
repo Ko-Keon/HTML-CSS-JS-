@@ -6,6 +6,8 @@ html {
 
 a { color: black; text-decoration: none;}
 
+h1 { font-size: 3.5rem; margin: 20px 0; font-weight: bold;}
+
 /* 헤더와 네비게이션바 */
 .head {
     position: fixed;
@@ -15,8 +17,8 @@ a { color: black; text-decoration: none;}
 
 .nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items:center;
     padding: 0 20px;
     border-bottom: 1px solid black;
     transition: all 1s;
@@ -27,21 +29,20 @@ a { color: black; text-decoration: none;}
 }
 
 .nav-menu li {
-    margin: 35px 20px;
+    margin: 35px 60px;
     font-size: 1.2rem;
     transition: all 1s;
-
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
 /* 스크롤 이벤트가 발생했을 때 바뀌는 네비게이션 디자인 */
 .nav.scrollon {
     color: white;
-    background-color: black;
+    background-color: darkkhaki;
     transition: all 1s;
 }
 
@@ -54,15 +55,240 @@ a { color: black; text-decoration: none;}
 /*  메인의 섹션 */
 section {
     height: 400px;
-    border: 1px solid black;
 }
 
+/* 섹션1 배너 */
 .banner {
     height: 100vh;
 }
 
+.banner .scroll-icon {
+    position: absolute;
+    bottom: 50px; left: 50%;
+    font-size: 2.5rem;
+    animation-name: movingIcon;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+/* 아이콘이 위아래로 움직이는 애니메이션 작성 */
+@keyframes movingIcon {
+    0% {transform: translate(0,0);}
+    70% {transform: translate(0,20px);}
+    100% {transform: translate(0,0);}
+}
+
+/* 섹션2 소개 */
+.intro-scroll {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1)),
+    url(../img/2.jpg);
+    background-size: cover;
+    padding: 0 20px;
+    opacity: 0;
+}
+
+/* 이벤트로 클래스가 붙었을 때 디자인 */
+.intro-scroll.scrollon {
+    opacity: 1;
+    transition: all 2s;
+}
+
+.intro-scroll .green-intro {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px rgb(85, 84, 84);
+    transform: translateX(-400px);
+}
+
+/* 이벤트 발생시 추가되는 클래스 */
+.intro-scroll.scrollon .green-intro {
+    transform: translateX(0);
+    transition: all 2s;
+}
+
+.intro-scroll .green-intro-image {
+    width: 100vw;
+    height: inherit; /*부모의 높이를 가져옴*/
+}
+
+/* 섹션 3 슬라이더 버튼 */
+.pictures {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+.pictures .picture-wrap {
+    padding: 20px 20px;
+}
+
+.pictures .picture-wrap .picture-explain {
+    margin-bottom: 40px;
+}
+
+/* 버튼 디자인 */
+.pictures .picture-wrap .picture-buttons a {
+    background-color: transparent;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.pictures .picture-wrap .picture-buttons a.on {
+    background-color: black;
+    color: white;
+    transition: all 0.3s;
+}
+
+/* 섹션 4 뉴스 */
+.news-scroll h1 {
+    text-align: center;
+    margin-top: 70px;
+}
+
+/* 뉴스 카드 */
+.news-cards {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin: 0 20px;
+}
+
+.card {
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px gray;
+    overflow: hidden;
+}
+
+.card .card-img-wrap {
+    height: 150px;
+    background-color: gray;
+    overflow: hidden;
+}
+
+/* 카드 글자 */
+.card .card-text {
+    padding: 20px;
+    text-align: center;
+}
+
+.card .card-text h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.card .card-text p {
+    font-weight: bold;
+    color: green;
+}
+
+.card .card-text span {
+    float: right;
+    color: gray;
+}
+
+.card .card-img-wrap .card-img {
+    height: inherit;
+}
+
+/* 카드에 마우스를 올렸을 때 전환 효과 */
+.card:hover .card-img-wrap .card-img {
+    transform: scale(1.2);
+    transition: all 0.5s;
+    filter: brightness(60%);
+    cursor: pointer;
+}
+
+/* scrollon이 추가되었을 때 보이는 전환 효과 */
+.news-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.news-scroll.scrollon {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1.5s;
+}
+
+
+
+
+/* 카드의 이미지 */
+.card:nth-child(1) .card-img-wrap .card-img {
+    background-image: url(../img/0.jpg);
+    background-size: cover;
+}
+
+.card:nth-child(2) .card-img-wrap .card-img {
+    background-image: url(../img/1.jpg);
+    background-size: cover;
+}
+
+.card:nth-child(3) .card-img-wrap .card-img {
+    background-image: url(../img/2.jpg);
+    background-size: cover;
+}
+
+.card:nth-child(4) .card-img-wrap .card-img {
+    background-image: url(../img/0.jpg);
+    background-size: cover;
+}
+
 /* 푸터 */
 .footer {
+    box-sizing: border-box;
     height: 200px;
     background-color: black;
+    color: white;
+    padding: 40px 60px;
+    display: flex;
 }
+
+.footer .footer-logo {
+    font-size: 1.5rem;
+    margin-right: 80px;
+}
+
+.footer .info {
+    display: grid;
+    font-size: 0.8rem;
+}
+
+.footer .info .top {
+    position: fixed;
+    bottom: 30px;
+    color: green;
+    border: solid 1px green;
+    background-color: inherit;
+    right: 50px;
+    padding: 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.top {
+    opacity: 0;
+}
+
+.top.scrollon {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+
+
+
+
+
